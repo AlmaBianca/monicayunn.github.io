@@ -3,230 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Message for Daniel</title>
+    <title>About | CBE - Consultancy in Burmese and English</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --beige: #f5f5dc;
+            --turquoise: #1abc9c;
+            --text: #222;
+        }
         body {
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(to right top, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
-            font-family: 'Georgia', serif;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            background: var(--beige);
+            color: var(--text);
+        }
+        header {
+            background: var(--turquoise);
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-
-        .container {
+            padding: 2rem 0 1rem 0;
             text-align: center;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px 60px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 2s ease-in-out;
-            position: relative;
-            z-index: 1;
+            letter-spacing: 1.5px;
         }
-
         h1 {
-            font-size: 4em;
             margin: 0;
-            letter-spacing: 3px;
-            animation: pulse 1.5s infinite alternate;
+            font-size: 2.2rem;
+            font-weight: 600;
         }
-
-        p {
-            font-size: 1.5em;
-            margin-top: 15px;
-            opacity: 0.8;
+        nav {
+            margin-top: 1rem;
         }
-
-        /* Heart animation */
-        .heart {
-            position: absolute;
-            background: #ff6b6b;
-            transform: rotate(-45deg);
-            animation: floatUp 6s infinite ease-in-out;
-            opacity: 0;
-            z-index: 0;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.2s;
         }
-
-        .heart:before,
-        .heart:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #ff6b6b;
-            border-radius: 50%;
+        nav a:hover {
+            color: #e0f7fa;
         }
-
-        .heart:before {
-            top: -50%;
-            left: 0;
-        }
-
-        .heart:after {
-            top: 0;
-            left: 50%;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.05); }
-        }
-
-        @keyframes floatUp {
-            0% { transform: translateY(0) rotate(-45deg) scale(0.5); opacity: 0; }
-            20% { opacity: 1; }
-            100% { transform: translateY(-1000px) rotate(-45deg) scale(1.2); opacity: 0; }
-        }
-
-        /* --- DANCING ANIMATION START --- */
-        .dancer {
-            margin: 40px auto 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            height: 160px;
-        }
-        .stickman {
-            position: relative;
-            width: 40px;
-            height: 140px;
-        }
-        .head {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
+        .container {
+            max-width: 800px;
+            margin: 2.5rem auto;
             background: #fff;
-            border-radius: 50%;
-            border: 3px solid #ff6b6b;
-            z-index: 2;
-            animation: head-bob 0.6s infinite alternate;
+            border-radius: 14px;
+            box-shadow: 0 2px 18px rgba(26,188,156,0.08);
+            padding: 2.5rem 2rem;
         }
-        .body {
-            position: absolute;
-            left: 50%;
-            top: 36px;
-            width: 6px;
-            height: 50px;
-            background: #fff;
-            border-radius: 3px;
-            transform: translateX(-50%);
-            animation: body-dance 1s infinite alternate;
+        h2 {
+            color: var(--turquoise);
+            margin-top: 0;
+            font-weight: 600;
+            font-size: 1.7rem;
         }
-        .left-arm, .right-arm {
-            position: absolute;
-            top: 45px;
-            width: 30px;
-            height: 6px;
-            background: #fff;
-            border-radius: 3px;
-            transform-origin: left center;
+        p, li {
+            font-size: 1.08rem;
+            line-height: 1.8;
         }
-        .left-arm {
-            left: 8px;
-            animation: left-arm-dance 1s infinite alternate;
+        ul {
+            margin-top: 0.5rem;
         }
-        .right-arm {
-            left: 6px;
-            transform: scaleX(-1);
-            animation: right-arm-dance 1s infinite alternate;
+        footer {
+            text-align: center;
+            color: #888;
+            margin: 3rem 0 1rem 0;
+            font-size: 0.96em;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            letter-spacing: 0.5px;
         }
-        .left-leg, .right-leg {
-            position: absolute;
-            top: 84px;
-            width: 26px;
-            height: 6px;
-            background: #fff;
-            border-radius: 3px;
-            transform-origin: left center;
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.2rem 0.7rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
         }
-        .left-leg {
-            left: 10px;
-            animation: left-leg-dance 0.9s infinite alternate;
-        }
-        .right-leg {
-            left: 8px;
-            transform: scaleX(-1);
-            animation: right-leg-dance 0.9s infinite alternate;
-        }
-
-        @keyframes head-bob {
-            0%   { top: 0; }
-            100% { top: 5px; }
-        }
-        @keyframes body-dance {
-            0%   { height: 50px; }
-            100% { height: 48px; }
-        }
-        @keyframes left-arm-dance {
-            0%   { transform: rotate(-35deg); }
-            100% { transform: rotate(-75deg); }
-        }
-        @keyframes right-arm-dance {
-            0%   { transform: scaleX(-1) rotate(-35deg); }
-            100% { transform: scaleX(-1) rotate(-75deg); }
-        }
-        @keyframes left-leg-dance {
-            0%   { transform: rotate(30deg); }
-            100% { transform: rotate(60deg); }
-        }
-        @keyframes right-leg-dance {
-            0%   { transform: scaleX(-1) rotate(30deg); }
-            100% { transform: scaleX(-1) rotate(60deg); }
-        }
-        /* --- DANCING ANIMATION END --- */
     </style>
 </head>
 <body>
+    <header>
+        <h1>CBE - Consultancy in Burmese and English</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
     <div class="container">
-        <h1>I Love Daniel! ❤️</h1>
-        <p>Dancing Animation.</p>
-
-        <!-- DANCER ADDED HERE -->
-        <div class="dancer">
-            <div class="stickman">
-                <div class="head"></div>
-                <div class="body"></div>
-                <div class="left-arm"></div>
-                <div class="right-arm"></div>
-                <div class="left-leg"></div>
-                <div class="right-leg"></div>
-            </div>
-        </div>
-        <!-- END DANCER -->
+        <h2>About CBE</h2>
+        <p>
+            <strong>CBE - Consultancy in Burmese and English</strong> was founded with the mission to bridge the communication gap between Burmese and English speakers worldwide. We are passionate about language, culture, and helping our clients achieve their goals through clear and accurate communication.
+        </p>
+        <ul>
+            <li><b>Expertise:</b> Our team consists of native Burmese and English linguists with years of experience in translation, interpretation, and localization.</li>
+            <li><b>Approach:</b> We combine linguistic expertise with cultural understanding to ensure your message resonates with your target audience.</li>
+            <li><b>Clients:</b> We serve businesses, non-profits, academic institutions, and individuals who need high-quality language services they can trust.</li>
+        </ul>
+        <p>
+            At CBE, we believe that language is more than just words—it’s about connection, understanding, and opportunity. Whether you need document translation, live interpretation for important meetings, or localization for your website or app, we’re here to help you succeed.
+        </p>
     </div>
-    <script>
-        // JavaScript for generating floating hearts
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            document.body.appendChild(heart);
-
-            const size = Math.random() * 20 + 10;
-            heart.style.width = `${size}px`;
-            heart.style.height = `${size}px`;
-            heart.style.left = `${Math.random() * 100}vw`;
-            heart.style.animationDuration = `${Math.random() * 3 + 3}s`;
-            heart.style.animationDelay = `${Math.random() * 2}s`;
-
-            heart.addEventListener('animationend', () => {
-                heart.remove();
-            });
-        }
-        setInterval(createHeart, 300);
-    </script>
+    <footer>
+        &copy; 2025 CBE - Consultancy in Burmese and English. All rights reserved.
+    </footer>
 </body>
 </html>
+           
+        
+           
+           
+      
+        
